@@ -1,7 +1,7 @@
+const mongoose = require('mongoose');
 const express = require("express");
 const app = express();
 const db = require('./config/keys').mongoURI;
-const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 
@@ -21,8 +21,8 @@ require('./config/passport')(passport);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use('/api/users', users)
-app.use('/api/tweets', tweets)
+app.use('/api/users', users);
+app.use('/api/tweets', tweets);
 
 
 const port = process.env.PORT || 5000;
